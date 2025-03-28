@@ -28,7 +28,7 @@ body {
 
 .logo {
   font-size: clamp(2rem, 6vw, 3.5rem);
-  color: #000;
+  color: #ffffff;
   text-shadow: 0 0 10px #fff, 0 0 20px #ff3c00;
   animation: glow 1.5s infinite alternate;
 }
