@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Nest - PDF Viewer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #ff6b6b, #f7b733, #ff4800, #ff8800);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header-title {
+            text-align: center;
+            padding: 2rem 0;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-title h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #000;
+            text-shadow: 0 0 15px rgba(255, 60, 0, 0.5);
+            animation: titleGlow 2s infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 10px #ff4800; }
+            50% { text-shadow: 0 0 20px #ff6600; }
+            100% { text-shadow: 0 0 10px #ff4800; }
+        }
+
+        .pdf-container {
+            width: 90%;
+            max-width: 1000px;
+            height: 80vh;
+            margin: 2rem auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 72, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .pdf-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6b6b, #f7b733, #ff4800, #ff8800);
+            z-index: -1;
+            animation: borderGlow 3s infinite alternate;
+        }
+
+        @keyframes borderGlow {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-container {
+                width: 95%;
+                height: 70vh;
+            }
+            
+            .header-title h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pdf-container {
+                height: 60vh;
+                border-radius: 10px;
+            }
+            
+            .header-title {
+                padding: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-title">
+        <h1>Social Nest</h1>
+    </div>
+
+    <div class="pdf-container">
+        <iframe 
+            src="https://drive.google.com/file/d/1kQ4c1pJ_2Etc7AAm8-PKMVjna9KBwo1G/preview" 
+            allow="autoplay"
+            loading="lazy"
+        ></iframe>
+    </div>
+</body>
+</html>

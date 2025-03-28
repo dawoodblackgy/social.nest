@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Nest</title>
+    <link rel="shortcut icon" href="1.png">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #000;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 1px, transparent 2px),
+                radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 1px, transparent 2px);
+            background-size: 3vw 3vh;
+            animation: twinkling 3s infinite alternate;
+        }
+
+        @keyframes twinkling {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+
+        .header-title {
+            position: relative;
+            z-index: 2;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header-title h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #ff4d00;
+            text-shadow: 0 0 15px rgba(255,77,0,0.5);
+            animation: titleGlow 2s infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 10px #ff4800; }
+            100% { text-shadow: 0 0 25px #ff6600; }
+        }
+
+        .music-player {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            background: rgba(255, 72, 0, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(255,72,0,0.3);
+            animation: pulse 6s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 30px rgba(255,72,0,0.3); }
+            50% { box-shadow: 0 0 50px rgba(255,72,0,0.5); }
+            100% { box-shadow: 0 0 30px rgba(255,72,0,0.3); }
+        }
+
+        .links {
+            display: grid;
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            background: linear-gradient(45deg, rgba(255,72,0,0.3), rgba(255,72,0,0.1));
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            min-height: 70px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .link:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(45deg, rgba(255,72,0,0.4), rgba(255,72,0,0.2));
+            box-shadow: 0 5px 15px rgba(255,72,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .music-player {
+                width: 95%;
+                padding: 1rem;
+            }
+            
+            .link {
+                padding: 1rem;
+                min-height: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-title {
+                padding: 1rem 0;
+            }
+            
+            .link {
+                font-size: 1rem;
+                min-height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+
+    <div class="header-title">
+        <h1>Social Nest🐦</h1>
+    </div>
+
+    <div class="music-player">
+        <div class="links">
+            <a class="link" href="https://drive.google.com/file/d/1NmeoJn-8KhiA-rgJespImNfy8rkGcYgC/view?usp=sharing" target="_blank">
+                إعلان اكسسوارات
+            </a>
+            <a class="link" href="https://drive.google.com/file/d/1KOEbuCXfiYWrMGPx0K8d-tH_TEClUDOn/view?usp=sharing" target="_blank">
+                إعلان لشركة تسويق
+            </a>
+            <a class="link" href="https://drive.google.com/file/d/1w3IKFXe9yU8VnVJCnmjcNUAbd-Ug4_u6/view?usp=sharing" target="_blank">
+                إعلان لأكاديمية تعليمية في مجال النفسية
+            </a>
+        </div>
+    </div>
+</body>
+</html>

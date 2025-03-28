@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Nest</title>
+    <link rel="shortcut icon" href="1.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff3c01e8, #f7b733, #ff0000, #8c00ff);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 30, 0, 0.493);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 15px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 3px solid #ff3c01e8;
+        }
+
+        .gallery-item h3 {
+            padding: 15px;
+            margin: 0;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin: 30px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .header-title h1 {
+            font-size: 2.8rem;
+            color: #000;
+            text-align: center;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ff3c00;
+            animation: glow 1.5s infinite alternate;
+            margin: 30px 0;
+            padding: 10px;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #ff4800, 0 0 20px #a200ff; }
+            100% { text-shadow: 0 0 20px #4CAF50, 0 0 30px #4CAF50; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header-title h1 {
+                font-size: 2.2rem;
+                margin: 20px 0;
+            }
+            
+            .gallery {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-item img {
+                height: 150px;
+            }
+            
+            .gallery-item h3 {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-title">
+            <h1>🐦Social Nest</h1>
+        </div>
+
+        <header>
+            <h2>معرض الفيديوهات التعليمية</h2>
+        </header>
+
+        <div class="gallery">
+            <!-- الفيديوهات مرتبة بنظام Grid -->
+            <div class="gallery-item" onclick="showVideo('https://www.youtube.com/embed/wBckcipGbtk')">
+                <img src="https://img.youtube.com/vi/wBckcipGbtk/0.jpg" alt="فيديو تعليمي 1">
+                <h3> السيلوليت</h3>
+            </div>
+
+            <div class="gallery-item" onclick="showVideo('https://www.youtube.com/embed/XOtKxRoMAqc')">
+                <img src="https://img.youtube.com/vi/XOtKxRoMAqc/0.jpg" alt="فيديو تعليمي 2">
+                <h3> Farhat الكويت </h3>
+            </div>
+
+            <div class="gallery-item" onclick="showVideo('https://www.youtube.com/embed/lbPQks_fczg')">
+                <img src="https://img.youtube.com/vi/lbPQks_fczg/0.jpg" alt="فيديو تعليمي 3">
+                <h3> Soul Sektch </h3>
+            </div>
+
+            <div class="gallery-item" onclick="showVideo('https://www.youtube.com/embed/PwKEkQ8cErk')">
+                <img src="https://img.youtube.com/vi/PwKEkQ8cErk/0.jpg" alt="فيديو تعليمي 4">
+                <h3>Zen Hospital</h3>
+            </div>
+
+            <div class="gallery-item" onclick="showVideo('https://www.youtube.com/embed/2G4Osu9IiXY')">
+                <img src="https://img.youtube.com/vi/2G4Osu9IiXY/0.jpg" alt="فيديو تعليمي 5">
+                <h3> Bellroma hospital</h3>
+            </div>
+
+            <div class="gallery-item" onclick="showVideo('https://www.youtube.com/embed/OudAacbHO4U')">
+                <img src="https://img.youtube.com/vi/OudAacbHO4U/0.jpg" alt="فيديو تعليمي 6">
+                <h3> علاج الليبوديما</h3>
+            </div>
+
+            <div class="gallery-item" onclick="showVideo('https://www.youtube.com/embed/mkJIaAZsiZk')">
+                <img src="https://img.youtube.com/vi/mkJIaAZsiZk/0.jpg" alt="فيديو تعليمي 7">
+                <h3> Labib Vape Store</h3>
+            </div>
+
+            <div class="gallery-item" onclick="showVideo('https://www.youtube.com/embed/gP3BJEVhYjQ')">
+                <img src="https://img.youtube.com/vi/gP3BJEVhYjQ/0.jpg" alt="فيديو تعليمي 8">
+                <h3> Farhat مشويات</h3>
+            </div>
+
+            <div class="gallery-item" onclick="showVideo('https://www.youtube.com/embed/NgfioSiTXCQ')">
+                <img src="https://img.youtube.com/vi/NgfioSiTXCQ/0.jpg" alt="فيديو تعليمي 9">
+                <h3> اكاديميات تعليمية Emore</h3>
+            </div>
+
+            <div class="gallery-item" onclick="showVideo('https://www.youtube.com/embed/VJa0vX7SWEc')">
+                <img src="https://img.youtube.com/vi/VJa0vX7SWEc/0.jpg" alt="فيديو تعليمي 10">
+                <h3> Gogle Development</h3>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe id="videoFrame" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function showVideo(url) {
+            const iframe = document.getElementById('videoFrame');
+            iframe.src = url;
+            iframe.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        window.onload = function() {
+            showVideo('https://www.youtube.com/embed/wBckcipGbtk');
+        }
+    </script>
+</body>
+</html>
